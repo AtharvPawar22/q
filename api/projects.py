@@ -216,64 +216,79 @@ project_data = {
 
 def handler(request):
     """Vercel serverless function handler"""
-    if request.method == 'OPTIONS':
-        return {
-            'statusCode': 200,
-            'headers': {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Headers': 'Content-Type',
-                'Access-Control-Allow-Methods': 'POST'
-            }
-        }
+    from flask import Flask, request as flask_request
     
-    if request.method == 'POST':
-        try:
-            data = request.get_json()
-            if not data:
-                return {
-                    'statusCode': 400,
-                    'body': json.dumps({"error": "No JSON data provided"})
-                }
-                
-            tech_stack = [tech.lower().strip() for tech in data.get('tech_stack', [])]
-            
-            if not tech_stack:
-                return {
-                    'statusCode': 400,
-                    'body': json.dumps({"error": "Tech stack is required"})
-                }
-            
-            result = {}
-            
-            for difficulty in ['easy', 'moderate', 'difficult']:
-                matching_projects = []
-                
-                for project in project_data[difficulty]:
-                    if any(tech in project['tech'] for tech in tech_stack):
-                        matching_tech = [tech for tech in project['tech'] if tech in tech_stack]
-                        
-                        project_copy = project.copy()
-                        project_copy['matching_tech'] = matching_tech
-                        matching_projects.append(project_copy)
-                
-                result[difficulty] = matching_projects
-            
+    app = Flask(__name__)
+    
+    with app.test_request_context(
+        path=request.url,
+        method=request.method,
+        headers=dict(request.headers),
+        data=request.get_data(),
+        query_string=request.query_string
+    ):
+        if flask_request.method == 'OPTIONS':
             return {
                 'statusCode': 200,
                 'headers': {
                     'Access-Control-Allow-Origin': '*',
-                    'Content-Type': 'application/json'
-                },
-                'body': json.dumps(result)
+                    'Access-Control-Allow-Headers': 'Content-Type',
+                    'Access-Control-Allow-Methods': 'POST'
+                }
             }
         
-        except Exception as e:
-            return {
-                'statusCode': 500,
-                'body': json.dumps({"error": str(e)})
-            }
-    
-    return {
-        'statusCode': 405,
-        'body': json.dumps({"error": "Method not allowed"})
-    }
+        if flask_request.method == 'POST':
+            try:
+                data = flask_request.get_json()
+                if not data:
+                    return {
+                        'statusCode': 400,
+                        'headers': {'Access-Control-Allow-Origin': '*'},
+                        'body': json.dumps({"error": "No JSON data provided"})
+                    }
+                    
+                tech_stack = [tech.lower().strip() for tech in data.get('tech_stack', [])]
+                
+                if not tech_stack:
+                    return {
+                        'statusCode': 400,
+                        'headers': {'Access-Control-Allow-Origin': '*'},
+                        'body': json.dumps({"error": "Tech stack is required"})
+                    }
+                
+                result = {}
+                
+                for difficulty in ['easy', 'moderate', 'difficult']:
+                    matching_projects = []
+                    
+                    for project in project_data[difficulty]:
+                        if any(tech in project['tech'] for tech in tech_stack):
+                            matching_tech = [tech for tech in project['tech'] if tech in tech_stack]
+                            
+                            project_copy = project.copy()
+                            project_copy['matching_tech'] = matching_tech
+                            matching_projects.append(project_copy)
+                    
+                    result[difficulty] = matching_projects
+                
+                return {
+                    'statusCode': 200,
+                    'headers': {
+                        'Access-Control-Allow-Origin': '*',
+                        'Content-Type': 'application/json'
+                    },
+                    'body': json.dumps(result)
+                }
+            
+            except Exception as e:
+                return {
+                    'statusCode': 500,
+                    'headers': {'Access-Control-Allow-Origin': '*'},
+                    'body': json.dumps({"error": str(e)})
+                }
+        
+        return {
+            'statusCode': 405,
+            'headers': {'Access-Control-Allow-Origin': '*'},
+            'body': json.dumps({"error": "Method not allowed"})
+        }
