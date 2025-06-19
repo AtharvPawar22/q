@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buildyn</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
-    <!-- Vercel Analytics -->
+
     <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
-    
+
     <style>
         * {
             margin: 0;
@@ -28,7 +27,6 @@
             line-height: 1.6;
         }
 
-        /* Background Canvas */
         #bg-canvas {
             position: fixed;
             top: 0;
@@ -79,7 +77,6 @@
             justify-content: center;
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -168,7 +165,6 @@
             box-shadow: 0 20px 40px rgba(99, 102, 241, 0.4);
         }
 
-        /* Why Section */
         .why-section {
             padding: 4rem 2rem;
             position: relative;
@@ -201,7 +197,6 @@
             line-height: 1.7;
         }
 
-        /* How It Works Section */
         .how-it-works-section {
             padding: 4rem 2rem;
             position: relative;
@@ -290,7 +285,25 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        /* Main Content */
+        @media (max-width: 768px) {
+            .step-screenshot {
+                max-width: none;
+                height: auto;
+                min-height: 200px;
+                object-fit: contain;
+                background: rgba(255, 255, 255, 0.02);
+                padding: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .step-screenshot {
+                min-height: 180px;
+                border-radius: 8px;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            }
+        }
+
         .main-content {
             padding: 4rem 2rem;
             position: relative;
@@ -323,7 +336,6 @@
             margin-right: auto;
         }
 
-        /* Input Section */
         .input-section {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
@@ -576,7 +588,6 @@
             border-color: transparent;
         }
 
-        /* Filter Section */
         .filter-section {
             display: none;
             margin-bottom: 2rem;
@@ -643,420 +654,416 @@
             text-align: center;
         }
 
-        /* Responsive Design */
-@media (max-width: 1024px) {
-    .hero h1 {
-        font-size: clamp(2.5rem, 6vw, 4rem);
-    }
-    
-    .input-section {
-        padding: 2.5rem;
-    }
-}
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: clamp(2.5rem, 6vw, 4rem);
+            }
 
-@media (max-width: 768px) {
-    .hero {
-        padding: 1rem;
-        min-height: 90vh;
-    }
-    
-    .hero h1 {
-        font-size: clamp(2rem, 8vw, 3rem);
-        margin-bottom: 1rem;
-    }
-    
-    .hero p {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-    }
-    
-    .hero-badge {
-        font-size: 0.75rem;
-        padding: 0.4rem 0.8rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .cta-button {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-    }
+            .input-section {
+                padding: 2.5rem;
+            }
+        }
 
-    .section-title {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    .section-subtitle {
-        font-size: 1rem;
-        margin-bottom: 2rem;
-    }
+        @media (max-width: 768px) {
+            .hero {
+                padding: 1rem;
+                min-height: 90vh;
+            }
 
-    .why-title {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-    }
-    
-    .why-intro {
-        font-size: 1rem;
-    }
-    
-    .why-section {
-        padding: 2rem 1rem;
-    }
-    
-    .main-content {
-        padding: 2rem 1rem;
-    }
+            .hero h1 {
+                font-size: clamp(2rem, 8vw, 3rem);
+                margin-bottom: 1rem;
+            }
 
-    .input-section {
-        padding: 1.5rem;
-        margin-bottom: 2rem;
-    }
-    
-    .tech-input {
-        padding: 0.8rem 1rem;
-        font-size: 1rem;
-    }
-    
-    .tech-tags {
-        min-height: 50px;
-        gap: 0.5rem;
-    }
-    
-    .tech-tag {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.8rem;
-    }
-    
-    .generate-btn {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-    }
+            .hero p {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
 
-    .filter-buttons {
-        gap: 0.5rem;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .filter-btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.85rem;
-        width: 200px;
-    }
+            .hero-badge {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.8rem;
+                margin-bottom: 1.5rem;
+            }
 
-    .difficulty-title {
-        font-size: 1.5rem;
-    }
-    
-    .difficulty-subtitle {
-        font-size: 0.9rem;
-    }
-    
-    .project-card {
-        padding: 1.2rem;
-    }
-    
-    .project-title {
-        font-size: 1.2rem;
-        margin-bottom: 0.8rem;
-    }
-    
-    .project-description {
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
-    }
-    
-    .tech-badge {
-        padding: 0.3rem 0.8rem;
-        font-size: 0.75rem;
-    }
-    
-    .projects-list {
-        gap: 1rem;
-    }
-    
-    .difficulty-group {
-        margin-bottom: 2rem;
-    }
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
 
-    /* Mobile responsive for how-it-works */
-    .how-it-works-section {
-        padding: 2rem 1rem;
-    }
-    
-    .how-it-works-title {
-        font-size: 1.8rem;
-    }
-    
-    .how-it-works-subtitle {
-        font-size: 1rem;
-        margin-bottom: 2rem;
-    }
-    
-    .steps-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .step-card {
-        padding: 1.5rem;
-    }
-    
-    .step-title {
-        font-size: 1.3rem;
-    }
-    
-    .step-description {
-        font-size: 0.9rem;
-    }
-}
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
 
-@media (max-width: 480px) {
-    .hero {
-        padding: 0.5rem;
-        min-height: 85vh;
-    }
-    
-    .hero h1 {
-        font-size: clamp(1.8rem, 10vw, 2.5rem);
-        line-height: 1.1;
-    }
-    
-    .hero p {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .hero-content {
-        max-width: 100%;
-    }
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
 
-    .section-title {
-        font-size: 1.6rem;
-    }
-    
-    .section-subtitle {
-        font-size: 0.9rem;
-        padding: 0 0.5rem;
-    }
+            .why-title {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
 
-    .why-title {
-        font-size: 1.5rem;
-    }
-    
-    .why-intro {
-        font-size: 0.9rem;
-        padding: 0 0.5rem;
-    }
+            .why-intro {
+                font-size: 1rem;
+            }
 
-    .input-section {
-        padding: 1rem;
-        border-radius: 16px;
-    }
-    
-    .tech-input {
-        padding: 0.7rem;
-        font-size: 0.9rem;
-        border-radius: 12px;
-    }
-    
-    .tech-tags {
-        min-height: 40px;
-    }
-    
-    .tech-tag {
-        padding: 0.3rem 0.6rem;
-        font-size: 0.75rem;
-    }
-    
-    .remove-tag {
-        width: 16px;
-        height: 16px;
-        font-size: 1rem;
-    }
-    
-    .generate-btn {
-        padding: 0.7rem 1.2rem;
-        font-size: 0.9rem;
-        border-radius: 12px;
-    }
+            .why-section {
+                padding: 2rem 1rem;
+            }
 
-    .filter-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.8rem;
-        width: 180px;
-    }
+            .main-content {
+                padding: 2rem 1rem;
+            }
 
-    .difficulty-header {
-        margin-bottom: 1rem;
-    }
-    
-    .difficulty-title {
-        font-size: 1.3rem;
-    }
-    
-    .project-card {
-        padding: 1rem;
-        border-radius: 12px;
-    }
-    
-    .project-title {
-        font-size: 1.1rem;
-        line-height: 1.2;
-    }
-    
-    .project-description {
-        font-size: 0.85rem;
-        line-height: 1.4;
-    }
-    
-    .project-tech {
-        gap: 0.4rem;
-    }
-    
-    .tech-badge {
-        padding: 0.25rem 0.6rem;
-        font-size: 0.7rem;
-    }
-    
-    .empty-icon {
-        font-size: 1.5rem;
-    }
-    
-    .empty-state p {
-        font-size: 0.85rem;
-    }
+            .input-section {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
 
-    .how-it-works-title {
-        font-size: 1.5rem;
-    }
-    
-    .step-card {
-        padding: 1rem;
-    }
-    
-    .step-number {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
-    
-    .step-title {
-        font-size: 1.2rem;
-    }
-}
+            .tech-input {
+                padding: 0.8rem 1rem;
+                font-size: 1rem;
+            }
 
-@media (max-width: 320px) {
-    .hero h1 {
-        font-size: 1.6rem;
-    }
-    
-    .hero p {
-        font-size: 0.9rem;
-    }
-    
-    .section-title {
-        font-size: 1.4rem;
-    }
-    
-    .why-title {
-        font-size: 1.3rem;
-    }
-    
-    .input-section {
-        padding: 0.8rem;
-    }
-    
-    .project-card {
-        padding: 0.8rem;
-    }
-    
-    .filter-btn {
-        width: 160px;
-        font-size: 0.75rem;
-    }
-}
+            .tech-tags {
+                min-height: 50px;
+                gap: 0.5rem;
+            }
 
-/* Touch improvements for mobile */
-@media (hover: none) and (pointer: coarse) {
-    .cta-button:hover {
-        transform: none;
-        box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
-    }
-    
-    .generate-btn:hover:not(:disabled) {
-        transform: none;
-        box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
-    }
-    
-    .project-card:hover {
-        transform: none;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-    
-    .filter-btn:hover {
-        background: rgba(255, 255, 255, 0.1);
-    }
-    
-    .remove-tag:hover {
-        background: rgba(255, 255, 255, 0.15);
-    }
-}
+            .tech-tag {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
 
-/* Improve touch targets */
-.remove-tag {
-    min-width: 24px;
-    min-height: 24px;
-}
+            .generate-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
 
-.filter-btn {
-    min-height: 44px;
-}
+            .filter-buttons {
+                gap: 0.5rem;
+                flex-direction: column;
+                align-items: center;
+            }
 
-.generate-btn {
-    min-height: 48px;
-}
+            .filter-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+                width: 200px;
+            }
 
-.cta-button {
-    min-height: 48px;
-}
+            .difficulty-title {
+                font-size: 1.5rem;
+            }
 
-.add-tech-btn {
-    width: 100%;
-    margin-top: 0.75rem;
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.8);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    min-height: 40px;
-}
+            .difficulty-subtitle {
+                font-size: 0.9rem;
+            }
 
-.add-tech-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
-    border-color: rgba(255, 255, 255, 0.3);
-}
+            .project-card {
+                padding: 1.2rem;
+            }
 
-.add-tech-btn:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-}
+            .project-title {
+                font-size: 1.2rem;
+                margin-bottom: 0.8rem;
+            }
 
-.add-tech-btn:disabled:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.8);
-    border-color: rgba(255, 255, 255, 0.2);
-}
+            .project-description {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+
+            .tech-badge {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.75rem;
+            }
+
+            .projects-list {
+                gap: 1rem;
+            }
+
+            .difficulty-group {
+                margin-bottom: 2rem;
+            }
+
+            .how-it-works-section {
+                padding: 2rem 1rem;
+            }
+
+            .how-it-works-title {
+                font-size: 1.8rem;
+            }
+
+            .how-it-works-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .steps-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .step-card {
+                padding: 1.5rem;
+            }
+
+            .step-title {
+                font-size: 1.3rem;
+            }
+
+            .step-description {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 0.5rem;
+                min-height: 85vh;
+            }
+
+            .hero h1 {
+                font-size: clamp(1.8rem, 10vw, 2.5rem);
+                line-height: 1.1;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.9rem;
+                padding: 0 0.5rem;
+            }
+
+            .why-title {
+                font-size: 1.5rem;
+            }
+
+            .why-intro {
+                font-size: 0.9rem;
+                padding: 0 0.5rem;
+            }
+
+            .input-section {
+                padding: 1rem;
+                border-radius: 16px;
+            }
+
+            .tech-input {
+                padding: 0.7rem;
+                font-size: 0.9rem;
+                border-radius: 12px;
+            }
+
+            .tech-tags {
+                min-height: 40px;
+            }
+
+            .tech-tag {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.75rem;
+            }
+
+            .remove-tag {
+                width: 16px;
+                height: 16px;
+                font-size: 1rem;
+            }
+
+            .generate-btn {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
+                border-radius: 12px;
+            }
+
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+                width: 180px;
+            }
+
+            .difficulty-header {
+                margin-bottom: 1rem;
+            }
+
+            .difficulty-title {
+                font-size: 1.3rem;
+            }
+
+            .project-card {
+                padding: 1rem;
+                border-radius: 12px;
+            }
+
+            .project-title {
+                font-size: 1.1rem;
+                line-height: 1.2;
+            }
+
+            .project-description {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+
+            .project-tech {
+                gap: 0.4rem;
+            }
+
+            .tech-badge {
+                padding: 0.25rem 0.6rem;
+                font-size: 0.7rem;
+            }
+
+            .empty-icon {
+                font-size: 1.5rem;
+            }
+
+            .empty-state p {
+                font-size: 0.85rem;
+            }
+
+            .how-it-works-title {
+                font-size: 1.5rem;
+            }
+
+            .step-card {
+                padding: 1rem;
+            }
+
+            .step-number {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+
+            .step-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .why-title {
+                font-size: 1.3rem;
+            }
+
+            .input-section {
+                padding: 0.8rem;
+            }
+
+            .project-card {
+                padding: 0.8rem;
+            }
+
+            .filter-btn {
+                width: 160px;
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .cta-button:hover {
+                transform: none;
+                box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+            }
+
+            .generate-btn:hover:not(:disabled) {
+                transform: none;
+                box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+            }
+
+            .project-card:hover {
+                transform: none;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .filter-btn:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            .remove-tag:hover {
+                background: rgba(255, 255, 255, 0.15);
+            }
+        }
+
+        .remove-tag {
+            min-width: 24px;
+            min-height: 24px;
+        }
+
+        .filter-btn {
+            min-height: 44px;
+        }
+
+        .generate-btn {
+            min-height: 48px;
+        }
+
+        .cta-button {
+            min-height: 48px;
+        }
+
+        .add-tech-btn {
+            width: 100%;
+            margin-top: 0.75rem;
+            padding: 0.6rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            min-height: 40px;
+        }
+
+        .add-tech-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .add-tech-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .add-tech-btn:disabled:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
 
@@ -1084,7 +1091,6 @@
         </div>
     </section>
 
-    <!-- Why Section -->
     <section class="why-section" id="why">
         <div class="why-container">
             <h2 class="why-title">Build Projects That Matter</h2>
@@ -1094,14 +1100,13 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
     <section class="how-it-works-section">
         <div class="how-it-works-container">
             <h2 class="how-it-works-title">How It Works</h2>
             <p class="how-it-works-subtitle">
                 Get personalized project ideas in just 2 simple steps
             </p>
-            
+
             <div class="steps-container">
                 <div class="step-card">
                     <div class="step-number">1</div>
@@ -1111,14 +1116,15 @@
                     </p>
                     <img src="step1-screenshot.png" alt="Step 1: Enter your tech stack" class="step-screenshot">
                 </div>
-                
+
                 <div class="step-card">
                     <div class="step-number">2</div>
                     <h3 class="step-title">Get Project Ideas</h3>
                     <p class="step-description">
                         Receive curated project suggestions tailored to your skills, organized by difficulty level.
                     </p>
-                    <img src="step2-screenshot.png" alt="Step 2: Get personalized project ideas" class="step-screenshot">
+                    <img src="step2-screenshot.png" alt="Step 2: Get personalized project ideas"
+                        class="step-screenshot">
                 </div>
             </div>
         </div>
@@ -1129,7 +1135,7 @@
             <div class="input-section">
                 <h2 class="section-title">What's in Your Stack?</h2>
                 <p class="section-subtitle">
-                Enter technologies you like. We'll suggest real, buildable project ideas made just for you.
+                    Enter technologies you like. We'll suggest real, buildable project ideas made just for you.
                 </p>
 
                 <div id="errorContainer"></div>
@@ -1140,7 +1146,7 @@
                     <button class="add-tech-btn" id="addTechBtn">
                         <span>Add</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 5v14m-7-7h14"/>
+                            <path d="M12 5v14m-7-7h14" />
                         </svg>
                     </button>
                 </div>
@@ -1174,17 +1180,15 @@
                     </div>
                     <div id="allProjects"></div>
                 </div>
-            </div> 
+            </div>
         </div>
     </main>
 
     <script>
-        // Configuration - Dynamic API URL
-        const API_BASE_URL = window.location.hostname === 'localhost' 
-            ? 'http://localhost:5002' 
+        const API_BASE_URL = window.location.hostname === 'localhost'
+            ? 'http://localhost:5002'
             : '';
 
-        // 3D Background
         let scene, camera, renderer, meshes = [];
 
         function init3D() {
@@ -1300,7 +1304,6 @@
             }
         });
 
-        // Navigation scroll effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('nav');
             if (nav && window.scrollY > 100) {
@@ -1310,7 +1313,6 @@
             }
         });
 
-        // Main functionality
         const techInput = document.getElementById('techInput');
         const techTags = document.getElementById('techTags');
         const generateBtn = document.getElementById('generateBtn');
@@ -1322,7 +1324,6 @@
 
         let selectedTechs = [];
 
-        // Event listeners
         techInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 e.preventDefault();
@@ -1333,7 +1334,6 @@
         generateBtn.addEventListener('click', generateProjects);
         addTechBtn.addEventListener('click', addTech);
 
-        // Functions
         function addTech() {
             const tech = techInput.value.trim();
             if (tech && !selectedTechs.some(t => t.toLowerCase() === tech.toLowerCase())) {
@@ -1341,10 +1341,9 @@
                 updateTechTags();
                 techInput.value = '';
                 updateGenerateButton();
-                updateAddButton(); // Add this line
+                updateAddButton();
                 clearError();
-                
-                // Track custom event
+
                 if (window.va) {
                     window.va('track', 'Tech Added', { tech: tech });
                 }
@@ -1397,9 +1396,8 @@
             generateBtn.disabled = true;
             clearError();
 
-            // Track project generation
             if (window.va) {
-                window.va('track', 'Projects Generated', { 
+                window.va('track', 'Projects Generated', {
                     techCount: selectedTechs.length,
                     technologies: selectedTechs.join(', ')
                 });
@@ -1436,8 +1434,7 @@
             } catch (error) {
                 console.error('Error:', error);
                 showError(`Failed to generate projects: ${error.message}`);
-                
-                // Track errors
+
                 if (window.va) {
                     window.va('track', 'Generation Error', { error: error.message });
                 }
@@ -1496,16 +1493,13 @@
                 `;
             }).join('');
 
-            // Show filter section and initialize filters
             filterSection.classList.add('show');
             initializeFilters();
 
-            // Reset to show all projects
             setActiveFilter('all');
             filterProjects('all');
         }
 
-        // Filter functionality
         let currentFilter = 'all';
 
         function initializeFilters() {
@@ -1515,8 +1509,7 @@
                     const filter = btn.dataset.filter;
                     setActiveFilter(filter);
                     filterProjects(filter);
-                    
-                    // Track filter usage
+
                     if (window.va) {
                         window.va('track', 'Filter Used', { filter: filter });
                     }
@@ -1546,21 +1539,17 @@
             });
         }
 
-        // Initialize filters when page loads
         document.addEventListener('DOMContentLoaded', initializeFilters);
 
-        // Smooth scroll for CTA
         document.querySelector('.cta-button').addEventListener('click', (e) => {
             e.preventDefault();
             document.getElementById('why').scrollIntoView({ behavior: 'smooth' });
-            
-            // Track CTA clicks
+
             if (window.va) {
                 window.va('track', 'CTA Clicked');
             }
         });
 
-        // Test API connection on page load
         async function testAPIConnection() {
             try {
                 const response = await fetch(`${API_BASE_URL}/api/health`);
@@ -1574,19 +1563,15 @@
             }
         }
 
-        // Test connection when page loads
         window.addEventListener('load', testAPIConnection);
 
-        // Add this new function to update the add button state
         function updateAddButton() {
             const tech = techInput.value.trim();
             addTechBtn.disabled = !tech || selectedTechs.some(t => t.toLowerCase() === tech.toLowerCase());
         }
 
-        // Add input event listener to update add button state as user types
         techInput.addEventListener('input', updateAddButton);
 
-        // Initialize add button state
         updateAddButton();
     </script>
 </body>
