@@ -201,6 +201,95 @@
             line-height: 1.7;
         }
 
+        /* How It Works Section */
+        .how-it-works-section {
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.01);
+        }
+
+        .how-it-works-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .how-it-works-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .how-it-works-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .step-description {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .step-screenshot {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
         /* Main Content */
         .main-content {
             padding: 4rem 2rem;
@@ -690,6 +779,37 @@
     .difficulty-group {
         margin-bottom: 2rem;
     }
+
+    /* Mobile responsive for how-it-works */
+    .how-it-works-section {
+        padding: 2rem 1rem;
+    }
+    
+    .how-it-works-title {
+        font-size: 1.8rem;
+    }
+    
+    .how-it-works-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .steps-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .step-card {
+        padding: 1.5rem;
+    }
+    
+    .step-title {
+        font-size: 1.3rem;
+    }
+    
+    .step-description {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -806,6 +926,24 @@
     
     .empty-state p {
         font-size: 0.85rem;
+    }
+
+    .how-it-works-title {
+        font-size: 1.5rem;
+    }
+    
+    .step-card {
+        padding: 1rem;
+    }
+    
+    .step-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .step-title {
+        font-size: 1.2rem;
     }
 }
 
@@ -953,6 +1091,36 @@
             <p class="why-intro">
                 Stop following tutorials. Start solving problems. Get projects that teach you to think like a developer.
             </p>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section">
+        <div class="how-it-works-container">
+            <h2 class="how-it-works-title">How It Works</h2>
+            <p class="how-it-works-subtitle">
+                Get personalized project ideas in just 2 simple steps
+            </p>
+            
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Enter Your Tech Stack</h3>
+                    <p class="step-description">
+                        Add the technologies you know or want to learn. Mix and match languages, frameworks, and tools.
+                    </p>
+                    <img src="/images/step1-screenshot.png" alt="Step 1: Enter your tech stack" class="step-screenshot">
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Get Project Ideas</h3>
+                    <p class="step-description">
+                        Receive curated project suggestions tailored to your skills, organized by difficulty level.
+                    </p>
+                    <img src="/placeholder.svg?height=300&width=500" alt="Step 2: Get personalized project ideas" class="step-screenshot">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1406,17 +1574,19 @@
             }
         }
 
-
+        // Test connection when page loads
         window.addEventListener('load', testAPIConnection);
 
-
+        // Add this new function to update the add button state
         function updateAddButton() {
             const tech = techInput.value.trim();
             addTechBtn.disabled = !tech || selectedTechs.some(t => t.toLowerCase() === tech.toLowerCase());
         }
 
+        // Add input event listener to update add button state as user types
         techInput.addEventListener('input', updateAddButton);
 
+        // Initialize add button state
         updateAddButton();
     </script>
 </body>
