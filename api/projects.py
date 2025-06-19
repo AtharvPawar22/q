@@ -12,7 +12,6 @@ class handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         try:
-            # Read the request body
             content_length = int(self.headers['Content-Length'])
             post_data = self.rfile.read(content_length)
             data = json.loads(post_data.decode('utf-8'))
@@ -22,8 +21,7 @@ class handler(BaseHTTPRequestHandler):
             if not tech_stack:
                 self.send_error_response(400, "Tech stack is required")
                 return
-            
-            # Project data
+        
             project_data = {
                 "easy": [
                     {
