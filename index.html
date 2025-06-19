@@ -7,7 +7,7 @@
     <title>Buildyn</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     
-
+    <!-- Vercel Analytics -->
     <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
@@ -28,7 +28,7 @@
             line-height: 1.6;
         }
 
-
+        /* Background Canvas */
         #bg-canvas {
             position: fixed;
             top: 0;
@@ -79,7 +79,7 @@
             justify-content: center;
         }
 
-
+        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -168,7 +168,7 @@
             box-shadow: 0 20px 40px rgba(99, 102, 241, 0.4);
         }
 
-
+        /* Why Section */
         .why-section {
             padding: 4rem 2rem;
             position: relative;
@@ -201,7 +201,7 @@
             line-height: 1.7;
         }
 
-
+        /* Main Content */
         .main-content {
             padding: 4rem 2rem;
             position: relative;
@@ -234,7 +234,7 @@
             margin-right: auto;
         }
 
-
+        /* Input Section */
         .input-section {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
@@ -554,7 +554,7 @@
             text-align: center;
         }
 
-
+        /* Responsive Design */
 @media (max-width: 1024px) {
     .hero h1 {
         font-size: clamp(2.5rem, 6vw, 4rem);
@@ -840,7 +840,7 @@
     }
 }
 
-
+/* Touch improvements for mobile */
 @media (hover: none) and (pointer: coarse) {
     .cta-button:hover {
         transform: none;
@@ -866,7 +866,7 @@
     }
 }
 
-
+/* Improve touch targets */
 .remove-tag {
     min-width: 24px;
     min-height: 24px;
@@ -882,6 +882,42 @@
 
 .cta-button {
     min-height: 48px;
+}
+
+.add-tech-btn {
+    width: 100%;
+    margin-top: 0.75rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 40px;
+}
+
+.add-tech-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.add-tech-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.add-tech-btn:disabled:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.2);
 }
     </style>
 </head>
@@ -910,7 +946,7 @@
         </div>
     </section>
 
-
+    <!-- Why Section -->
     <section class="why-section" id="why">
         <div class="why-container">
             <h2 class="why-title">Build Projects That Matter</h2>
@@ -933,6 +969,12 @@
                 <div class="input-container">
                     <input type="text" id="techInput" class="tech-input"
                         placeholder="Enter a technology (Python, Javascript, React...)" autocomplete="off">
+                    <button class="add-tech-btn" id="addTechBtn">
+                        <span>Add</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 5v14m-7-7h14"/>
+                        </svg>
+                    </button>
                 </div>
 
                 <div class="tech-tags-container">
@@ -969,12 +1011,12 @@
     </main>
 
     <script>
-
+        // Configuration - Dynamic API URL
         const API_BASE_URL = window.location.hostname === 'localhost' 
             ? 'http://localhost:5002' 
             : '';
 
-
+        // 3D Background
         let scene, camera, renderer, meshes = [];
 
         function init3D() {
@@ -1090,6 +1132,7 @@
             }
         });
 
+        // Navigation scroll effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('nav');
             if (nav && window.scrollY > 100) {
@@ -1099,6 +1142,7 @@
             }
         });
 
+        // Main functionality
         const techInput = document.getElementById('techInput');
         const techTags = document.getElementById('techTags');
         const generateBtn = document.getElementById('generateBtn');
@@ -1106,10 +1150,11 @@
         const btnLoading = document.getElementById('btnLoading');
         const resultsSection = document.getElementById('resultsSection');
         const errorContainer = document.getElementById('errorContainer');
+        const addTechBtn = document.getElementById('addTechBtn');
 
         let selectedTechs = [];
 
-
+        // Event listeners
         techInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 e.preventDefault();
@@ -1118,8 +1163,9 @@
         });
 
         generateBtn.addEventListener('click', generateProjects);
+        addTechBtn.addEventListener('click', addTech);
 
-
+        // Functions
         function addTech() {
             const tech = techInput.value.trim();
             if (tech && !selectedTechs.some(t => t.toLowerCase() === tech.toLowerCase())) {
@@ -1127,8 +1173,10 @@
                 updateTechTags();
                 techInput.value = '';
                 updateGenerateButton();
+                updateAddButton(); // Add this line
                 clearError();
-
+                
+                // Track custom event
                 if (window.va) {
                     window.va('track', 'Tech Added', { tech: tech });
                 }
@@ -1181,7 +1229,7 @@
             generateBtn.disabled = true;
             clearError();
 
-
+            // Track project generation
             if (window.va) {
                 window.va('track', 'Projects Generated', { 
                     techCount: selectedTechs.length,
@@ -1221,7 +1269,7 @@
                 console.error('Error:', error);
                 showError(`Failed to generate projects: ${error.message}`);
                 
-    
+                // Track errors
                 if (window.va) {
                     window.va('track', 'Generation Error', { error: error.message });
                 }
@@ -1280,14 +1328,16 @@
                 `;
             }).join('');
 
-
+            // Show filter section and initialize filters
             filterSection.classList.add('show');
             initializeFilters();
 
+            // Reset to show all projects
             setActiveFilter('all');
             filterProjects('all');
         }
 
+        // Filter functionality
         let currentFilter = 'all';
 
         function initializeFilters() {
@@ -1297,7 +1347,8 @@
                     const filter = btn.dataset.filter;
                     setActiveFilter(filter);
                     filterProjects(filter);
-
+                    
+                    // Track filter usage
                     if (window.va) {
                         window.va('track', 'Filter Used', { filter: filter });
                     }
@@ -1327,19 +1378,21 @@
             });
         }
 
+        // Initialize filters when page loads
         document.addEventListener('DOMContentLoaded', initializeFilters);
 
+        // Smooth scroll for CTA
         document.querySelector('.cta-button').addEventListener('click', (e) => {
             e.preventDefault();
             document.getElementById('why').scrollIntoView({ behavior: 'smooth' });
             
-
+            // Track CTA clicks
             if (window.va) {
                 window.va('track', 'CTA Clicked');
             }
         });
 
-
+        // Test API connection on page load
         async function testAPIConnection() {
             try {
                 const response = await fetch(`${API_BASE_URL}/api/health`);
@@ -1353,7 +1406,18 @@
             }
         }
 
+
         window.addEventListener('load', testAPIConnection);
+
+
+        function updateAddButton() {
+            const tech = techInput.value.trim();
+            addTechBtn.disabled = !tech || selectedTechs.some(t => t.toLowerCase() === tech.toLowerCase());
+        }
+
+        techInput.addEventListener('input', updateAddButton);
+
+        updateAddButton();
     </script>
 </body>
 
