@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buildyn</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Vercel Analytics -->
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    
     <style>
         * {
             margin: 0;
@@ -628,7 +635,7 @@
             <div class="input-section">
                 <h2 class="section-title">What's in Your Stack?</h2>
                 <p class="section-subtitle">
-                    Enter technologies you like. We'll suggest real, buildable project ideas made just for you.
+                Enter technologies you like. We'll suggest real, buildable project ideas made just for you.
                 </p>
 
                 <div id="errorContainer"></div>
@@ -667,14 +674,14 @@
                     </div>
                     <div id="allProjects"></div>
                 </div>
-            </div>
+            </div> 
         </div>
     </main>
 
     <script>
         // Configuration - Dynamic API URL
-        const API_BASE_URL = window.location.hostname === 'localhost'
-            ? 'http://localhost:5002'
+        const API_BASE_URL = window.location.hostname === 'localhost' 
+            ? 'http://localhost:5002' 
             : '';
 
         // 3D Background
@@ -833,6 +840,11 @@
                 techInput.value = '';
                 updateGenerateButton();
                 clearError();
+                
+                // Track custom event
+                if (window.va) {
+                    window.va('track', 'Tech Added', { tech: tech });
+                }
             }
         }
 
@@ -882,6 +894,14 @@
             generateBtn.disabled = true;
             clearError();
 
+            // Track project generation
+            if (window.va) {
+                window.va('track', 'Projects Generated', { 
+                    techCount: selectedTechs.length,
+                    technologies: selectedTechs.join(', ')
+                });
+            }
+
             try {
                 const response = await fetch(`${API_BASE_URL}/api/projects`, {
                     method: 'POST',
@@ -913,6 +933,11 @@
             } catch (error) {
                 console.error('Error:', error);
                 showError(`Failed to generate projects: ${error.message}`);
+                
+                // Track errors
+                if (window.va) {
+                    window.va('track', 'Generation Error', { error: error.message });
+                }
             } finally {
                 btnText.style.display = 'block';
                 btnLoading.style.display = 'none';
@@ -987,6 +1012,11 @@
                     const filter = btn.dataset.filter;
                     setActiveFilter(filter);
                     filterProjects(filter);
+                    
+                    // Track filter usage
+                    if (window.va) {
+                        window.va('track', 'Filter Used', { filter: filter });
+                    }
                 });
             });
         }
@@ -1020,6 +1050,11 @@
         document.querySelector('.cta-button').addEventListener('click', (e) => {
             e.preventDefault();
             document.getElementById('why').scrollIntoView({ behavior: 'smooth' });
+            
+            // Track CTA clicks
+            if (window.va) {
+                window.va('track', 'CTA Clicked');
+            }
         });
 
         // Test API connection on page load
