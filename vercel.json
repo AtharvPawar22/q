@@ -1,0 +1,17 @@
+{
+  "functions": {
+    "api/*.py": {
+      "runtime": "python3.9"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/projects",
+      "dest": "/api/projects.py"
+    },
+    {
+      "src": "/api/health",
+      "dest": "/api/health.py"
+    }
+  ]
+}
