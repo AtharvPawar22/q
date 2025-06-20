@@ -378,10 +378,18 @@
         }
 
         .autocomplete-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
             padding: 0.75rem 1rem;
             cursor: pointer;
             transition: all 0.2s ease;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .autocomplete-item .tech-icon {
+            width: 20px;
+            height: 20px;
         }
 
         .autocomplete-item:last-child {
@@ -438,16 +446,246 @@
             animation: slideIn 0.3s ease;
         }
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+        .tech-icon {
+            width: 16px;
+            height: 16px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            flex-shrink: 0;
+        }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Programming Languages */
+        .tech-icon.python {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg');
+        }
+
+        .tech-icon.javascript {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg');
+        }
+
+        .tech-icon.typescript {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg');
+        }
+
+        .tech-icon.golang {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg');
+        }
+
+        .tech-icon.go {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg');
+        }
+
+        .tech-icon.cplusplus {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg');
+        }
+
+        .tech-icon.java {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg');
+        }
+
+        .tech-icon.php {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg');
+        }
+
+        .tech-icon.rust {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg');
+        }
+
+        .tech-icon.csharp {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg');
+        }
+
+        .tech-icon.swift {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg');
+        }
+
+        .tech-icon.kotlin {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg');
+        }
+
+        .tech-icon.ruby {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg');
+        }
+
+        /* Frontend Frameworks/Libraries */
+        .tech-icon.react {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg');
+        }
+
+        .tech-icon.vuejs {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg');
+        }
+
+        .tech-icon.angular {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg');
+        }
+
+        .tech-icon.svelte {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg');
+        }
+
+        .tech-icon.nextjs {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg');
+        }
+
+        .tech-icon.nuxtjs {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg');
+        }
+
+        .tech-icon.flutter {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg');
+        }
+
+        /* Backend Frameworks */
+        .tech-icon.nodejs {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg');
+        }
+
+        .tech-icon.express {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg');
+        }
+
+        .tech-icon.django {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg');
+        }
+
+        .tech-icon.flask {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg');
+        }
+
+        .tech-icon.spring {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg');
+        }
+
+        .tech-icon.laravel {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg');
+        }
+
+        .tech-icon.rails {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rails/rails-original-wordmark.svg');
+        }
+
+        .tech-icon.dotnet {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg');
+        }
+
+        /* Databases */
+        .tech-icon.mongodb {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg');
+        }
+
+        .tech-icon.postgresql {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg');
+        }
+
+        .tech-icon.mysql {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg');
+        }
+
+        .tech-icon.redis {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg');
+        }
+
+        .tech-icon.neo4j {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/neo4j/neo4j-original.svg');
+        }
+
+        .tech-icon.sql {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg');
+        }
+
+        /* Styling/CSS */
+        .tech-icon.html {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg');
+        }
+
+        .tech-icon.css {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg');
+        }
+
+        .tech-icon.tailwindcss {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg');
+        }
+
+        .tech-icon.bootstrap {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg');
+        }
+
+        .tech-icon.sass {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg');
+        }
+
+        /* Build Tools */
+        .tech-icon.webpack {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg');
+        }
+
+        .tech-icon.vite {
+            background-image: url('https://vitejs.dev/logo.svg');
+        }
+
+        .tech-icon.git {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg');
+        }
+
+        /* Cloud/DevOps */
+        .tech-icon.docker {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg');
+        }
+
+        .tech-icon.kubernetes {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg');
+        }
+
+        .tech-icon.aws {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg');
+        }
+
+        .tech-icon.azure {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg');
+        }
+
+        /* Game Engines */
+        .tech-icon.unity {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg');
+        }
+
+        .tech-icon.unreal {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg');
+        }
+
+        /* Other Tools */
+        .tech-icon.graphql {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg');
+        }
+
+        .tech-icon.blender {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg');
+        }
+
+        .tech-icon.reactnative {
+            background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg');
+        }
+
+        .tech-icon.restapi {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTMuMDkgOC4yNkwyMCA5TDEzLjA5IDE1Ljc0TDEyIDIyTDEwLjkxIDE1Ljc0TDQgOUwxMC45MSA4LjI2TDEyIDJaIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=');
+        }
+
+        /* Autocomplete dropdown icons */
+        .autocomplete-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .autocomplete-item .tech-icon {
+            width: 20px;
+            height: 20px;
         }
 
         .remove-tag {
@@ -463,6 +701,18 @@
             justify-content: center;
             border-radius: 50%;
             transition: all 0.2s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .remove-tag:hover {
@@ -1366,6 +1616,74 @@
         let highlightedIndex = -1;
         let filteredTechs = [];
 
+        function getTechIconClass(tech) {
+            const techLower = tech.toLowerCase().replace(/[.\s-]/g, '');
+            const iconMap = {
+                'python': 'python',
+                'javascript': 'javascript',
+                'typescript': 'typescript',
+                'golang': 'golang',
+                'go': 'go',
+                'c++': 'cplusplus',
+                'react': 'react',
+                'java': 'java',
+                'neo4j': 'neo4j',
+                'php': 'php',
+                'sql': 'sql',
+                'rust': 'rust',
+                'html': 'html',
+                'css': 'css',
+                'vuejs': 'vuejs',
+                'vue.js': 'vuejs',
+                'angular': 'angular',
+                'nodejs': 'nodejs',
+                'node.js': 'nodejs',
+                'express': 'express',
+                'django': 'django',
+                'flask': 'flask',
+                'springboot': 'spring',
+                'spring boot': 'spring',
+                'mongodb': 'mongodb',
+                'postgresql': 'postgresql',
+                'mysql': 'mysql',
+                'redis': 'redis',
+                'docker': 'docker',
+                'kubernetes': 'kubernetes',
+                'aws': 'aws',
+                'azure': 'azure',
+                'git': 'git',
+                'graphql': 'graphql',
+                'restapi': 'restapi',
+                'rest api': 'restapi',
+                'tailwindcss': 'tailwindcss',
+                'bootstrap': 'bootstrap',
+                'sass': 'sass',
+                'webpack': 'webpack',
+                'vite': 'vite',
+                'nextjs': 'nextjs',
+                'next.js': 'nextjs',
+                'nuxtjs': 'nuxtjs',
+                'nuxt.js': 'nuxtjs',
+                'svelte': 'svelte',
+                'laravel': 'laravel',
+                'rubyonrails': 'rails',
+                'ruby on rails': 'rails',
+                'c#': 'csharp',
+                '.net': 'dotnet',
+                'swift': 'swift',
+                'kotlin': 'kotlin',
+                'flutter': 'flutter',
+                'reactnative': 'reactnative',
+                'react native': 'reactnative',
+                'unity': 'unity',
+                'unrealengine': 'unreal',
+                'unreal engine': 'unreal',
+                'blender': 'blender'
+            };
+            
+            return iconMap[techLower] || 'default';
+        }
+
         function filterTechnologies(query) {
             if (!query) return [];
             return technologies.filter(tech => 
@@ -1382,9 +1700,11 @@
 
             autocompleteDropdown.innerHTML = techs.map((tech, index) => {
                 const isSelected = selectedTechs.some(selected => selected.toLowerCase() === tech.toLowerCase());
+                const iconClass = getTechIconClass(tech);
                 return `<div class="autocomplete-item ${isSelected ? 'already-selected' : ''}" data-tech="${tech}" data-index="${index}">
-                    ${tech}
-                </div>`;
+            <div class="tech-icon ${iconClass}"></div>
+            ${tech}
+        </div>`;
             }).join('');
 
             autocompleteDropdown.classList.add('show');
@@ -1520,12 +1840,14 @@
                     </div>
                 `;
             } else {
-                techTags.innerHTML = selectedTechs.map((tech, index) =>
-                    `<div class="tech-tag">
-                        ${tech}
-                        <button class="remove-tag" onclick="removeTech(${index})">×</button>
-                    </div>`
-                ).join('');
+                techTags.innerHTML = selectedTechs.map((tech, index) => {
+            const iconClass = getTechIconClass(tech);
+            return `<div class="tech-tag">
+                <div class="tech-icon ${iconClass}"></div>
+                ${tech}
+                <button class="remove-tag" onclick="removeTech(${index})">×</button>
+            </div>`;
+        }).join('');
             }
         }
 
