@@ -93,6 +93,46 @@ class handler(BaseHTTPRequestHandler):
                         "title": "AR Card Viewer (Marker-Based)",
                         "description": "Use webcam and AR.js to overlay content on printable markers.",
                         "tech": ["javascript", "html", "css"]
+                    },
+                    {
+                        "title": "Simple Vue.js Weather Widget",
+                        "description": "A clean weather display component that fetches data from a free weather API and shows current conditions with icons.",
+                        "tech": ["vue.js", "javascript", "html", "css"]
+                    },
+                    {
+                        "title": "TypeScript Number Guessing Game",
+                        "description": "A browser-based guessing game with type safety, difficulty levels, and score tracking.",
+                        "tech": ["typescript", "html", "css"]
+                    },
+                    {
+                        "title": "Bootstrap Landing Page Template",
+                        "description": "Create a responsive landing page template using Bootstrap components and custom styling.",
+                        "tech": ["bootstrap", "html", "css", "javascript"]
+                    },
+                    {
+                        "title": "TailwindCSS Component Library",
+                        "description": "Build a small collection of reusable UI components like buttons, cards, and forms using TailwindCSS.",
+                        "tech": ["tailwindcss", "html", "css"]
+                    },
+                    {
+                        "title": "Express.js Hello World API",
+                        "description": "Create a simple REST API with basic routes for learning Express.js fundamentals and JSON responses.",
+                        "tech": ["express", "node.js", "javascript"]
+                    },
+                    {
+                        "title": "Flutter Habit Tracker",
+                        "description": "A mobile app to track daily habits with checkboxes, streaks, and simple statistics.",
+                        "tech": ["flutter", "dart"]
+                    },
+                    {
+                        "title": "Kotlin Android Calculator",
+                        "description": "A basic calculator app for Android with clean UI and standard mathematical operations.",
+                        "tech": ["kotlin", "android"]
+                    },
+                    {
+                        "title": "Unity 2D Platformer Prototype",
+                        "description": "Create a simple 2D platformer with player movement, jumping, and basic collision detection.",
+                        "tech": ["unity", "c#"]
                     }
                 ],
                 "moderate": [
@@ -150,6 +190,101 @@ class handler(BaseHTTPRequestHandler):
                         "title": "Fictional Language Generator",
                         "description": "Create new languages or naming conventions using probabilistic rules.",
                         "tech": ["python", "javascript", "html", "css"]
+                    },
+                    {
+                        "title": "Angular Task Management Board",
+                        "description": "A Kanban-style task board with drag-and-drop functionality, user authentication, and local storage.",
+                        "tech": ["angular", "typescript", "html", "css"]
+                    },
+                    {
+                        "title": "Django Recipe Sharing Platform",
+                        "description": "A web platform where users can share recipes, rate them, and create collections with user profiles.",
+                        "tech": ["django", "python", "html", "css", "sql"]
+                    },
+                    {
+                        "title": "Flask API with MongoDB",
+                        "description": "Build a RESTful API for a book library system with CRUD operations and user authentication.",
+                        "tech": ["flask", "python", "mongodb"]
+                    },
+                    {
+                        "title": "Spring Boot Inventory System",
+                        "description": "A backend system for managing product inventory with REST endpoints and PostgreSQL integration.",
+                        "tech": ["spring boot", "java", "postgresql", "sql"]
+                    },
+                    {
+                        "title": "Redis-Cached News Aggregator",
+                        "description": "Aggregate news from multiple APIs with Redis caching for improved performance and rate limiting.",
+                        "tech": ["node.js", "express", "redis", "javascript"]
+                    },
+                    {
+                        "title": "Docker Multi-Service App",
+                        "description": "Containerize a full-stack application with separate containers for frontend, backend, and database.",
+                        "tech": ["docker", "node.js", "react", "postgresql"]
+                    },
+                    {
+                        "title": "GraphQL Movie Database",
+                        "description": "Create a GraphQL API for movie data with complex queries, mutations, and real-time subscriptions.",
+                        "tech": ["graphql", "node.js", "javascript", "mongodb"]
+                    },
+                    {
+                        "title": "Sass-Powered Design System",
+                        "description": "Build a comprehensive design system with variables, mixins, and modular components using Sass.",
+                        "tech": ["sass", "html", "css", "javascript"]
+                    },
+                    {
+                        "title": "Webpack Module Federation App",
+                        "description": "Create a micro-frontend architecture using Webpack's module federation with shared components.",
+                        "tech": ["webpack", "javascript", "react", "html", "css"]
+                    },
+                    {
+                        "title": "Vite Plugin Development",
+                        "description": "Develop a custom Vite plugin that transforms files or adds development features to the build process.",
+                        "tech": ["vite", "javascript", "typescript", "node.js"]
+                    },
+                    {
+                        "title": "Next.js E-commerce Store",
+                        "description": "Build a server-side rendered e-commerce site with product pages, cart functionality, and payment integration.",
+                        "tech": ["next.js", "react", "javascript", "html", "css"]
+                    },
+                    {
+                        "title": "Nuxt.js Blog with CMS",
+                        "description": "Create a static blog site with content management, SEO optimization, and automatic deployment.",
+                        "tech": ["nuxt.js", "vue.js", "javascript", "html", "css"]
+                    },
+                    {
+                        "title": "Svelte Weather Dashboard",
+                        "description": "Build a reactive weather dashboard with multiple city tracking, charts, and weather alerts.",
+                        "tech": ["svelte", "javascript", "html", "css"]
+                    },
+                    {
+                        "title": "Laravel Social Media API",
+                        "description": "Create a social media backend with user posts, following system, and real-time notifications.",
+                        "tech": ["laravel", "php", "mysql", "sql"]
+                    },
+                    {
+                        "title": "Ruby on Rails Marketplace",
+                        "description": "Build a marketplace platform with seller profiles, product listings, and transaction management.",
+                        "tech": ["ruby on rails", "ruby", "postgresql", "sql"]
+                    },
+                    {
+                        "title": ".NET Core Microservice",
+                        "description": "Develop a microservice architecture with API gateways, service discovery, and inter-service communication.",
+                        "tech": [".net", "c#", "sql", "azure"]
+                    },
+                    {
+                        "title": "React Native Fitness Tracker",
+                        "description": "A cross-platform mobile app for tracking workouts, progress photos, and fitness goals with offline support.",
+                        "tech": ["react native", "javascript", "react"]
+                    },
+                    {
+                        "title": "Unreal Engine VR Experience",
+                        "description": "Create an immersive VR environment with interactive objects, spatial audio, and hand tracking.",
+                        "tech": ["unreal engine", "c++"]
+                    },
+                    {
+                        "title": "Blender Python Automation",
+                        "description": "Develop Python scripts to automate 3D modeling tasks, batch processing, and custom tool creation in Blender.",
+                        "tech": ["blender", "python"]
                     }
                 ],
                 "difficult": [
@@ -217,6 +352,131 @@ class handler(BaseHTTPRequestHandler):
                         "title": "IoT Smart Home Simulator",
                         "description": "Simulate smart devices and sensors with event-driven state logic.",
                         "tech": ["c++", "javascript", "react"]
+                    },
+                    {
+                        "title": "Angular Enterprise Dashboard",
+                        "description": "Build a complex enterprise dashboard with real-time data visualization, role-based access control, and advanced filtering.",
+                        "tech": ["angular", "typescript", "node.js", "postgresql", "sql"]
+                    },
+                    {
+                        "title": "Django Machine Learning Pipeline",
+                        "description": "Create a web platform for training, evaluating, and deploying ML models with data preprocessing and model versioning.",
+                        "tech": ["django", "python", "postgresql", "redis", "docker"]
+                    },
+                    {
+                        "title": "Flask Microservices Architecture",
+                        "description": "Design a distributed system with multiple Flask services, API gateway, service discovery, and centralized logging.",
+                        "tech": ["flask", "python", "docker", "redis", "postgresql"]
+                    },
+                    {
+                        "title": "Spring Boot Event Sourcing System",
+                        "description": "Implement an event-driven architecture with CQRS pattern, event store, and eventual consistency.",
+                        "tech": ["spring boot", "java", "postgresql", "mongodb", "docker"]
+                    },
+                    {
+                        "title": "Kubernetes Orchestrated Application",
+                        "description": "Deploy a multi-tier application on Kubernetes with auto-scaling, health checks, and rolling updates.",
+                        "tech": ["kubernetes", "docker", "node.js", "postgresql", "redis"]
+                    },
+                    {
+                        "title": "AWS Serverless Data Pipeline",
+                        "description": "Build a serverless data processing pipeline using Lambda, S3, and DynamoDB with real-time analytics.",
+                        "tech": ["aws", "python", "node.js", "sql"]
+                    },
+                    {
+                        "title": "Azure DevOps CI/CD Platform",
+                        "description": "Create a complete DevOps solution with automated testing, deployment pipelines, and infrastructure as code.",
+                        "tech": ["azure", ".net", "c#", "docker", "sql"]
+                    },
+                    {
+                        "title": "Git-Based Code Review System",
+                        "description": "Build a web-based code review platform that integrates with Git repositories and provides diff visualization.",
+                        "tech": ["git", "node.js", "react", "postgresql", "typescript"]
+                    },
+                    {
+                        "title": "GraphQL Federation Gateway",
+                        "description": "Implement a federated GraphQL architecture that combines multiple services into a unified API schema.",
+                        "tech": ["graphql", "node.js", "typescript", "docker", "postgresql"]
+                    },
+                    {
+                        "title": "Advanced Sass Framework",
+                        "description": "Create a comprehensive CSS framework with theming system, responsive utilities, and component architecture.",
+                        "tech": ["sass", "javascript", "webpack", "html", "css"]
+                    },
+                    {
+                        "title": "Webpack Plugin Ecosystem",
+                        "description": "Develop a suite of Webpack plugins for code optimization, asset management, and development workflow enhancement.",
+                        "tech": ["webpack", "javascript", "typescript", "node.js"]
+                    },
+                    {
+                        "title": "Vite-Powered Monorepo",
+                        "description": "Set up a monorepo with multiple packages, shared dependencies, and optimized build processes using Vite.",
+                        "tech": ["vite", "typescript", "node.js", "react", "vue.js"]
+                    },
+                    {
+                        "title": "Next.js Full-Stack SaaS Platform",
+                        "description": "Build a complete SaaS application with authentication, subscription billing, admin dashboard, and API management.",
+                        "tech": ["next.js", "react", "typescript", "postgresql", "stripe"]
+                    },
+                    {
+                        "title": "Nuxt.js Headless CMS",
+                        "description": "Create a headless CMS with content management, API generation, and multi-site deployment capabilities.",
+                        "tech": ["nuxt.js", "vue.js", "typescript", "mongodb", "graphql"]
+                    },
+                    {
+                        "title": "Svelte Compiler Extension",
+                        "description": "Extend the Svelte compiler with custom transformations, optimizations, and development tools.",
+                        "tech": ["svelte", "javascript", "typescript", "node.js"]
+                    },
+                    {
+                        "title": "Laravel Enterprise API",
+                        "description": "Build a scalable enterprise API with advanced authentication, rate limiting, caching, and comprehensive documentation.",
+                        "tech": ["laravel", "php", "redis", "mysql", "docker"]
+                    },
+                    {
+                        "title": "Ruby on Rails Multi-Tenant SaaS",
+                        "description": "Develop a multi-tenant SaaS platform with tenant isolation, custom domains, and scalable architecture.",
+                        "tech": ["ruby on rails", "ruby", "postgresql", "redis", "docker"]
+                    },
+                    {
+                        "title": ".NET Distributed System",
+                        "description": "Create a distributed system with message queues, event sourcing, and microservices communication patterns.",
+                        "tech": [".net", "c#", "azure", "sql", "docker"]
+                    },
+                    {
+                        "title": "Swift iOS AR Shopping App",
+                        "description": "Build an augmented reality shopping app with 3D product visualization, gesture recognition, and payment integration.",
+                        "tech": ["swift", "arkit", "ios"]
+                    },
+                    {
+                        "title": "Kotlin Multiplatform Framework",
+                        "description": "Develop a cross-platform framework that shares business logic between Android, iOS, and web applications.",
+                        "tech": ["kotlin", "android", "ios"]
+                    },
+                    {
+                        "title": "Flutter Desktop Enterprise App",
+                        "description": "Create a cross-platform desktop application with complex UI, database integration, and native system integration.",
+                        "tech": ["flutter", "dart", "sql", "desktop"]
+                    },
+                    {
+                        "title": "React Native AR/VR Platform",
+                        "description": "Build a mobile AR/VR platform with 3D rendering, spatial tracking, and cross-platform compatibility.",
+                        "tech": ["react native", "javascript", "react", "ar", "vr"]
+                    },
+                    {
+                        "title": "Unity Multiplayer Game Engine",
+                        "description": "Develop a multiplayer game with networked physics, real-time synchronization, and scalable server architecture.",
+                        "tech": ["unity", "c#", "networking", "multiplayer"]
+                    },
+                    {
+                        "title": "Unreal Engine Procedural World Generator",
+                        "description": "Create a system for generating vast, detailed game worlds using procedural algorithms and advanced rendering techniques.",
+                        "tech": ["unreal engine", "c++", "procedural generation"]
+                    },
+                    {
+                        "title": "Blender Production Pipeline",
+                        "description": "Develop a complete 3D production pipeline with automated rendering, asset management, and team collaboration tools.",
+                        "tech": ["blender", "python", "pipeline", "automation"]
                     }
                 ]
             }
